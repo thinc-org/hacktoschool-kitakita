@@ -1,0 +1,13 @@
+{
+  "name": "@org/constants",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "format": "eslint src --fix"
+  },
+  "devDependencies": {
+    "@org/config": "workspace:0.0.0"
+  }
+}
