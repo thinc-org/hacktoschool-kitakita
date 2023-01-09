@@ -32,4 +32,4 @@ jobs:
 
       - name: Test PR Name
         run: |
-          echo "${{ github.event.pull_request.title }}" | pnpm commitlint --config package.json
+          echo "${{ github.event.pull_request.title }}" | pnpm commitlint
