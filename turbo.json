@@ -17,11 +17,15 @@
       ],
       "cache": false
     },
-    "lint": {
-      "outputs": []
+    "lint": {},
+    "format": {},
+    "test": {
+      "cache": false
     },
-    "format": {
-      "outputs": []
+    "test:cov": {
+      "outputs": [
+        "coverage/**"
+      ]
     },
     "dev": {
       "cache": false
