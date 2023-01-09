@@ -6,7 +6,7 @@ interface IProfilePic {
 
 export const ProfilePic: FC<IProfilePic> = ({ character }) => {
   return (
-    <div className="bg-cyan-light flex h-8 w-8 items-center justify-center rounded-full p-1 text-xs font-bold uppercase">
+    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-light p-1 text-xs font-bold uppercase">
       {character}
     </div>
   );
