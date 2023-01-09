@@ -14,6 +14,61 @@ export type Scalars = {
   DateTime: any;
 };
 
+export type BoolFilter = {
+  equals?: InputMaybe<Scalars['Boolean']>;
+  not?: InputMaybe<NestedBoolFilter>;
+};
+
+export type Course = {
+  __typename?: 'Course';
+  _count: CourseCount;
+  createdAt: Scalars['DateTime'];
+  description: Scalars['String'];
+  id: Scalars['ID'];
+  instructor: InstructorProfile;
+  instructorId: Scalars['String'];
+  students?: Maybe<Array<StudentProfile>>;
+  title: Scalars['String'];
+  updatedAt: Scalars['DateTime'];
+  videos?: Maybe<Array<Video>>;
+};
+
+export type CourseCount = {
+  __typename?: 'CourseCount';
+  students: Scalars['Int'];
+  videos: Scalars['Int'];
+};
+
+export type CourseListRelationFilter = {
+  every?: InputMaybe<CourseWhereInput>;
+  none?: InputMaybe<CourseWhereInput>;
+  some?: InputMaybe<CourseWhereInput>;
+};
+
+export type CourseOrderByRelationAggregateInput = {
+  _count?: InputMaybe<SortOrder>;
+};
+
+export type CourseRelationFilter = {
+  is?: InputMaybe<CourseWhereInput>;
+  isNot?: InputMaybe<CourseWhereInput>;
+};
+
+export type CourseWhereInput = {
+  AND?: InputMaybe<Array<CourseWhereInput>>;
+  NOT?: InputMaybe<Array<CourseWhereInput>>;
+  OR?: InputMaybe<Array<CourseWhereInput>>;
+  createdAt?: InputMaybe<DateTimeFilter>;
+  description?: InputMaybe<StringFilter>;
+  id?: InputMaybe<StringFilter>;
+  instructor?: InputMaybe<InstructorProfileRelationFilter>;
+  instructorId?: InputMaybe<StringFilter>;
+  students?: InputMaybe<StudentProfileListRelationFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<DateTimeFilter>;
+  videos?: InputMaybe<VideoListRelationFilter>;
+};
+
 export type DateTimeFilter = {
   equals?: InputMaybe<Scalars['DateTime']>;
   gt?: InputMaybe<Scalars['DateTime']>;
@@ -25,6 +80,68 @@ export type DateTimeFilter = {
   notIn?: InputMaybe<Array<Scalars['DateTime']>>;
 };
 
+export type EnumUserRoleFilter = {
+  equals?: InputMaybe<UserRole>;
+  in?: InputMaybe<Array<UserRole>>;
+  not?: InputMaybe<NestedEnumUserRoleFilter>;
+  notIn?: InputMaybe<Array<UserRole>>;
+};
+
+export type InstructorProfile = {
+  __typename?: 'InstructorProfile';
+  _count: InstructorProfileCount;
+  courses?: Maybe<Array<Course>>;
+  createdAt: Scalars['DateTime'];
+  updatedAt: Scalars['DateTime'];
+  user: User;
+  userId: Scalars['ID'];
+};
+
+export type InstructorProfileCount = {
+  __typename?: 'InstructorProfileCount';
+  courses: Scalars['Int'];
+};
+
+export type InstructorProfileOrderByWithRelationInput = {
+  courses?: InputMaybe<CourseOrderByRelationAggregateInput>;
+  createdAt?: InputMaybe<SortOrder>;
+  updatedAt?: InputMaybe<SortOrder>;
+  user?: InputMaybe<UserOrderByWithRelationInput>;
+  userId?: InputMaybe<SortOrder>;
+};
+
+export type InstructorProfileRelationFilter = {
+  is?: InputMaybe<InstructorProfileWhereInput>;
+  isNot?: InputMaybe<InstructorProfileWhereInput>;
+};
+
+export type InstructorProfileWhereInput = {
+  AND?: InputMaybe<Array<InstructorProfileWhereInput>>;
+  NOT?: InputMaybe<Array<InstructorProfileWhereInput>>;
+  OR?: InputMaybe<Array<InstructorProfileWhereInput>>;
+  courses?: InputMaybe<CourseListRelationFilter>;
+  createdAt?: InputMaybe<DateTimeFilter>;
+  updatedAt?: InputMaybe<DateTimeFilter>;
+  user?: InputMaybe<UserRelationFilter>;
+  userId?: InputMaybe<StringFilter>;
+};
+
+export type IntFilter = {
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
+};
+
+export type NestedBoolFilter = {
+  equals?: InputMaybe<Scalars['Boolean']>;
+  not?: InputMaybe<NestedBoolFilter>;
+};
+
 export type NestedDateTimeFilter = {
   equals?: InputMaybe<Scalars['DateTime']>;
   gt?: InputMaybe<Scalars['DateTime']>;
@@ -34,6 +151,24 @@ export type NestedDateTimeFilter = {
   lte?: InputMaybe<Scalars['DateTime']>;
   not?: InputMaybe<NestedDateTimeFilter>;
   notIn?: InputMaybe<Array<Scalars['DateTime']>>;
+};
+
+export type NestedEnumUserRoleFilter = {
+  equals?: InputMaybe<UserRole>;
+  in?: InputMaybe<Array<UserRole>>;
+  not?: InputMaybe<NestedEnumUserRoleFilter>;
+  notIn?: InputMaybe<Array<UserRole>>;
+};
+
+export type NestedIntFilter = {
+  equals?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<Scalars['Int']>>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  not?: InputMaybe<NestedIntFilter>;
+  notIn?: InputMaybe<Array<Scalars['Int']>>;
 };
 
 export type NestedStringFilter = {
@@ -91,34 +226,104 @@ export type StringFilter = {
   startsWith?: InputMaybe<Scalars['String']>;
 };
 
+export type StudentProfile = {
+  __typename?: 'StudentProfile';
+  _count: StudentProfileCount;
+  courses?: Maybe<Array<Course>>;
+  createdAt: Scalars['DateTime'];
+  updatedAt: Scalars['DateTime'];
+  user: User;
+  userId: Scalars['ID'];
+};
+
+export type StudentProfileCount = {
+  __typename?: 'StudentProfileCount';
+  courses: Scalars['Int'];
+};
+
+export type StudentProfileListRelationFilter = {
+  every?: InputMaybe<StudentProfileWhereInput>;
+  none?: InputMaybe<StudentProfileWhereInput>;
+  some?: InputMaybe<StudentProfileWhereInput>;
+};
+
+export type StudentProfileOrderByWithRelationInput = {
+  courses?: InputMaybe<CourseOrderByRelationAggregateInput>;
+  createdAt?: InputMaybe<SortOrder>;
+  updatedAt?: InputMaybe<SortOrder>;
+  user?: InputMaybe<UserOrderByWithRelationInput>;
+  userId?: InputMaybe<SortOrder>;
+};
+
+export type StudentProfileRelationFilter = {
+  is?: InputMaybe<StudentProfileWhereInput>;
+  isNot?: InputMaybe<StudentProfileWhereInput>;
+};
+
+export type StudentProfileWhereInput = {
+  AND?: InputMaybe<Array<StudentProfileWhereInput>>;
+  NOT?: InputMaybe<Array<StudentProfileWhereInput>>;
+  OR?: InputMaybe<Array<StudentProfileWhereInput>>;
+  courses?: InputMaybe<CourseListRelationFilter>;
+  createdAt?: InputMaybe<DateTimeFilter>;
+  updatedAt?: InputMaybe<DateTimeFilter>;
+  user?: InputMaybe<UserRelationFilter>;
+  userId?: InputMaybe<StringFilter>;
+};
+
 export type User = {
   __typename?: 'User';
+  InstructorProfile?: Maybe<InstructorProfile>;
+  StudentProfile?: Maybe<StudentProfile>;
   createdAt: Scalars['DateTime'];
   id: Scalars['ID'];
+  online: Scalars['Boolean'];
+  role: UserRole;
   updatedAt: Scalars['DateTime'];
   username: Scalars['String'];
 };
 
 export type UserOrderByWithRelationInput = {
+  InstructorProfile?: InputMaybe<InstructorProfileOrderByWithRelationInput>;
+  StudentProfile?: InputMaybe<StudentProfileOrderByWithRelationInput>;
   createdAt?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
+  online?: InputMaybe<SortOrder>;
+  role?: InputMaybe<SortOrder>;
   updatedAt?: InputMaybe<SortOrder>;
   username?: InputMaybe<SortOrder>;
 };
 
+export type UserRelationFilter = {
+  is?: InputMaybe<UserWhereInput>;
+  isNot?: InputMaybe<UserWhereInput>;
+};
+
+export enum UserRole {
+  Admin = 'Admin',
+  Instructor = 'Instructor',
+  Student = 'Student'
+}
+
 export enum UserScalarFieldEnum {
   CreatedAt = 'createdAt',
   Id = 'id',
+  Online = 'online',
+  Role = 'role',
   UpdatedAt = 'updatedAt',
   Username = 'username'
 }
 
 export type UserWhereInput = {
   AND?: InputMaybe<Array<UserWhereInput>>;
+  InstructorProfile?: InputMaybe<InstructorProfileRelationFilter>;
   NOT?: InputMaybe<Array<UserWhereInput>>;
   OR?: InputMaybe<Array<UserWhereInput>>;
+  StudentProfile?: InputMaybe<StudentProfileRelationFilter>;
   createdAt?: InputMaybe<DateTimeFilter>;
   id?: InputMaybe<StringFilter>;
+  online?: InputMaybe<BoolFilter>;
+  role?: InputMaybe<EnumUserRoleFilter>;
   updatedAt?: InputMaybe<DateTimeFilter>;
   username?: InputMaybe<StringFilter>;
 };
@@ -126,4 +331,38 @@ export type UserWhereInput = {
 export type UserWhereUniqueInput = {
   id?: InputMaybe<Scalars['String']>;
   username?: InputMaybe<Scalars['String']>;
+};
+
+export type Video = {
+  __typename?: 'Video';
+  course: Course;
+  courseId: Scalars['String'];
+  createdAt: Scalars['DateTime'];
+  description: Scalars['String'];
+  duration: Scalars['Int'];
+  id: Scalars['ID'];
+  src: Scalars['String'];
+  title: Scalars['String'];
+  updatedAt: Scalars['DateTime'];
+};
+
+export type VideoListRelationFilter = {
+  every?: InputMaybe<VideoWhereInput>;
+  none?: InputMaybe<VideoWhereInput>;
+  some?: InputMaybe<VideoWhereInput>;
+};
+
+export type VideoWhereInput = {
+  AND?: InputMaybe<Array<VideoWhereInput>>;
+  NOT?: InputMaybe<Array<VideoWhereInput>>;
+  OR?: InputMaybe<Array<VideoWhereInput>>;
+  course?: InputMaybe<CourseRelationFilter>;
+  courseId?: InputMaybe<StringFilter>;
+  createdAt?: InputMaybe<DateTimeFilter>;
+  description?: InputMaybe<StringFilter>;
+  duration?: InputMaybe<IntFilter>;
+  id?: InputMaybe<StringFilter>;
+  src?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  updatedAt?: InputMaybe<DateTimeFilter>;
 };
