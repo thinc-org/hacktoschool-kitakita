@@ -1,5 +1,6 @@
 import { useUserCountQuery } from "@kitakita/codegen";
 import { Button } from "@kitakita/design";
+import { Navbar } from "@org/design";
 
 import { MyPage } from "$core/@types";
 
@@ -19,6 +20,8 @@ const IndexPage: MyPage = () => {
       <a href="https://github.com/Leomotors/turbo-next-nest-graphql-prisma">
         <Button>GitHub</Button>
       </a>
+    <main>
+      <Navbar />
     </main>
   );
 };
