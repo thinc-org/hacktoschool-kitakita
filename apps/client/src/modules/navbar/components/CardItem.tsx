@@ -1,14 +1,14 @@
 import { FC } from "react";
 
-interface IOverlayItem {
+interface ICardItem {
   text: string;
   link: string;
 }
 
-export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
+export const CardItem: FC<ICardItem> = ({ link, text }) => {
   return (
     <div
-      className="font-semibold hover:cursor-pointer hover:text-cyan-dark"
+      className="m-2 w-36 text-gray-dark hover:text-black"
       role="presentation"
       onClick={() => link !== "-" && (window.location.href = link)}
       onKeyDown={() => link !== "-" && (window.location.href = link)}
@@ -18,4 +18,4 @@ export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
   );
 };
 
-OverlayItem.displayName = "OverlayItem";
+CardItem.displayName = "CardItem";

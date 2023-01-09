@@ -3,7 +3,7 @@ import { Navbar } from "$modules/navbar/components/Navbar";
 
 const IndexPage: MyPage = () => {
   return (
-    <main>
+    <main className="h-screen w-screen bg-gray-light">
       <Navbar />
     </main>
   );

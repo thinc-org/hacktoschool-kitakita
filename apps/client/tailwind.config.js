@@ -22,6 +22,9 @@ const config = {
         sans: ["Dela Gothic One"],
         sansSerif: ["Montserrat", "sans-serif"],
       },
+      maxWidth: {
+        screen: "100vh",
+      },
     },
   },
 };
