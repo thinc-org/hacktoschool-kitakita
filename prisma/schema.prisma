@@ -15,12 +15,96 @@ generator nestgraphql {
   output   = "../apps/server/src/@generated"
 }
 
+enum UserRole {
+  Student
+  Instructor
+  Admin
+}
+
 model User {
-  id       String @id @unique @default(cuid())
-  username String @unique
+  id       String   @id @unique @default(cuid())
+  username String   @unique
+  role     UserRole
+  online   Boolean  @default(false)
+
+  StudentProfile    StudentProfile?
+  InstructorProfile InstructorProfile?
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("user")
+}
+
+model StudentProfile {
+  userId String @id @unique @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  courses Course[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("student_profile")
+}
+
+model InstructorProfile {
+  userId String @id @unique @map("user_id")
+  user   User   @relation(fields: [userId], references: [id])
+
+  courses Course[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("instructor_profile")
+}
+
+model Course {
+  id          String @id @unique @default(cuid())
+  title       String
+  description String
+
+  instructor   InstructorProfile @relation(fields: [instructorId], references: [userId])
+  instructorId String            @map("instructor_id")
+
+  students StudentProfile[]
+  videos   Video[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("course")
+}
+
+model Material {
+  id String @id @unique @default(cuid())
+
+  title       String
+  description String
+
+  src String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("material")
+}
+
+model Video {
+  id String @id @unique @default(cuid())
+
+  title       String
+  description String
+
+  src      String
+  duration Int
+
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId String @map("course_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("video")
 }

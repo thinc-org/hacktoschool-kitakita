@@ -2,17 +2,83 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type User {
-  id: ID!
-  username: String!
+type InstructorProfileCount {
+  courses: Int!
+}
+
+type InstructorProfile {
+  userId: ID!
+  user: User!
+  courses: [Course!]
   createdAt: DateTime!
   updatedAt: DateTime!
+  _count: InstructorProfileCount!
 }
 
 """
 A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
 """
 scalar DateTime
+
+type Video {
+  id: ID!
+  title: String!
+  description: String!
+  src: String!
+  duration: Int!
+  course: Course!
+  courseId: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type CourseCount {
+  students: Int!
+  videos: Int!
+}
+
+type Course {
+  id: ID!
+  title: String!
+  description: String!
+  instructor: InstructorProfile!
+  instructorId: String!
+  students: [StudentProfile!]
+  videos: [Video!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  _count: CourseCount!
+}
+
+type StudentProfileCount {
+  courses: Int!
+}
+
+type StudentProfile {
+  userId: ID!
+  user: User!
+  courses: [Course!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  _count: StudentProfileCount!
+}
+
+type User {
+  id: ID!
+  username: String!
+  role: UserRole!
+  online: Boolean!
+  StudentProfile: StudentProfile
+  InstructorProfile: InstructorProfile
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+enum UserRole {
+  Student
+  Instructor
+  Admin
+}
 
 type Query {
   users(where: UserWhereInput, orderBy: [UserOrderByWithRelationInput!], cursor: UserWhereUniqueInput, take: Int, skip: Int, distinct: [UserScalarFieldEnum!]): [User!]!
@@ -25,6 +91,10 @@ input UserWhereInput {
   NOT: [UserWhereInput!]
   id: StringFilter
   username: StringFilter
+  role: EnumUserRoleFilter
+  online: BoolFilter
+  StudentProfile: StudentProfileRelationFilter
+  InstructorProfile: InstructorProfileRelationFilter
   createdAt: DateTimeFilter
   updatedAt: DateTimeFilter
 }
@@ -63,6 +133,88 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input EnumUserRoleFilter {
+  equals: UserRole
+  in: [UserRole!]
+  notIn: [UserRole!]
+  not: NestedEnumUserRoleFilter
+}
+
+input NestedEnumUserRoleFilter {
+  equals: UserRole
+  in: [UserRole!]
+  notIn: [UserRole!]
+  not: NestedEnumUserRoleFilter
+}
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input StudentProfileRelationFilter {
+  is: StudentProfileWhereInput
+  isNot: StudentProfileWhereInput
+}
+
+input StudentProfileWhereInput {
+  AND: [StudentProfileWhereInput!]
+  OR: [StudentProfileWhereInput!]
+  NOT: [StudentProfileWhereInput!]
+  userId: StringFilter
+  user: UserRelationFilter
+  courses: CourseListRelationFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input CourseListRelationFilter {
+  every: CourseWhereInput
+  some: CourseWhereInput
+  none: CourseWhereInput
+}
+
+input CourseWhereInput {
+  AND: [CourseWhereInput!]
+  OR: [CourseWhereInput!]
+  NOT: [CourseWhereInput!]
+  id: StringFilter
+  title: StringFilter
+  description: StringFilter
+  instructor: InstructorProfileRelationFilter
+  instructorId: StringFilter
+  students: StudentProfileListRelationFilter
+  videos: VideoListRelationFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input InstructorProfileRelationFilter {
+  is: InstructorProfileWhereInput
+  isNot: InstructorProfileWhereInput
+}
+
+input InstructorProfileWhereInput {
+  AND: [InstructorProfileWhereInput!]
+  OR: [InstructorProfileWhereInput!]
+  NOT: [InstructorProfileWhereInput!]
+  userId: StringFilter
+  user: UserRelationFilter
+  courses: CourseListRelationFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
 input DateTimeFilter {
   equals: DateTime
   in: [DateTime!]
@@ -85,9 +237,67 @@ input NestedDateTimeFilter {
   not: NestedDateTimeFilter
 }
 
+input StudentProfileListRelationFilter {
+  every: StudentProfileWhereInput
+  some: StudentProfileWhereInput
+  none: StudentProfileWhereInput
+}
+
+input VideoListRelationFilter {
+  every: VideoWhereInput
+  some: VideoWhereInput
+  none: VideoWhereInput
+}
+
+input VideoWhereInput {
+  AND: [VideoWhereInput!]
+  OR: [VideoWhereInput!]
+  NOT: [VideoWhereInput!]
+  id: StringFilter
+  title: StringFilter
+  description: StringFilter
+  src: StringFilter
+  duration: IntFilter
+  course: CourseRelationFilter
+  courseId: StringFilter
+  createdAt: DateTimeFilter
+  updatedAt: DateTimeFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input CourseRelationFilter {
+  is: CourseWhereInput
+  isNot: CourseWhereInput
+}
+
 input UserOrderByWithRelationInput {
   id: SortOrder
   username: SortOrder
+  role: SortOrder
+  online: SortOrder
+  StudentProfile: StudentProfileOrderByWithRelationInput
+  InstructorProfile: InstructorProfileOrderByWithRelationInput
   createdAt: SortOrder
   updatedAt: SortOrder
 }
@@ -95,6 +305,26 @@ input UserOrderByWithRelationInput {
 enum SortOrder {
   asc
   desc
+}
+
+input StudentProfileOrderByWithRelationInput {
+  userId: SortOrder
+  user: UserOrderByWithRelationInput
+  courses: CourseOrderByRelationAggregateInput
+  createdAt: SortOrder
+  updatedAt: SortOrder
+}
+
+input CourseOrderByRelationAggregateInput {
+  _count: SortOrder
+}
+
+input InstructorProfileOrderByWithRelationInput {
+  userId: SortOrder
+  user: UserOrderByWithRelationInput
+  courses: CourseOrderByRelationAggregateInput
+  createdAt: SortOrder
+  updatedAt: SortOrder
 }
 
 input UserWhereUniqueInput {
@@ -105,6 +335,8 @@ input UserWhereUniqueInput {
 enum UserScalarFieldEnum {
   id
   username
+  role
+  online
   createdAt
   updatedAt
 }
