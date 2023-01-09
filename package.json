@@ -51,10 +51,5 @@
     "overrides": {
       "@babel/parser": "^7.20.0"
     }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }

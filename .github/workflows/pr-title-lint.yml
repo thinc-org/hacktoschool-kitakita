@@ -1,0 +1,35 @@
+name: PR Title Lint
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Setup node with cache
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Remove original package.json and pnpm-lock.yaml
+        run: |
+          rm package.json pnpm-lock.yaml pnpm-workspace.yaml
+
+      - name: Add Commitlint dependencies
+        run: |
+          pnpm add @commitlint/cli @commitlint/config-conventional
+
+      - name: Test PR Name
+        run: |
+          echo "${{ github.event.pull_request.title }}" | pnpm commitlint
