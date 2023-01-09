@@ -65,6 +65,7 @@ importers:
   apps/client:
     specifiers:
       '@apollo/client': ^3.7.3
+      '@kitakita/apollo': workspace:0.0.0
       '@kitakita/codegen': workspace:0.0.0
       '@kitakita/config': workspace:0.0.0
       '@kitakita/constants': workspace:0.0.0
@@ -84,6 +85,7 @@ importers:
       typescript: ^4.9.4
     dependencies:
       '@apollo/client': 3.7.3_gdcq4dv6opitr3wbfwyjmanyra
+      '@kitakita/apollo': link:../../packages/apollo
       '@kitakita/design': link:../../packages/design
       clsx: 1.2.1
       next: 13.1.1_3duxcpitbtplz62feflag7fwby
@@ -164,6 +166,17 @@ importers:
       typescript: 4.9.4
       webpack: 5.75.0
 
+  packages/apollo:
+    specifiers:
+      '@apollo/client': ^3.7.3
+      '@kitakita/config': workspace:0.0.0
+      '@kitakita/constants': workspace:0.0.0
+    dependencies:
+      '@apollo/client': 3.7.3_graphql@16.6.0
+    devDependencies:
+      '@kitakita/config': link:../config
+      '@kitakita/constants': link:../constants
+
   packages/codegen:
     specifiers:
       '@apollo/client': ^3.7.3
@@ -173,7 +186,6 @@ importers:
       '@graphql-codegen/typescript-operations': ^2.5.12
       '@graphql-codegen/typescript-react-apollo': ^3.3.7
       '@kitakita/config': workspace:0.0.0
-      '@kitakita/constants': workspace:0.0.0
       graphql: ^16.6.0
       graphql-tag: ^2.12.6
       nodemon: ^2.0.20
@@ -188,7 +200,6 @@ importers:
       '@graphql-codegen/typescript-operations': 2.5.12_graphql@16.6.0
       '@graphql-codegen/typescript-react-apollo': 3.3.7_sy4knu3obj4ys7pjcqbyfxmqle
       '@kitakita/config': link:../config
-      '@kitakita/constants': link:../constants
       nodemon: 2.0.20
 
   packages/config:
