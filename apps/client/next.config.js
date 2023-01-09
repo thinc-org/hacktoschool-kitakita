@@ -3,7 +3,7 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages: ["@org/codegen", "@org/constants", "@org/design"],
+  transpilePackages: ["@kitakita/codegen", "@kitakita/constants", "@kitakita/design"],
 };
 
 module.exports = config;

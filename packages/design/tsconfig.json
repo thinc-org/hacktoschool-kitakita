@@ -1,5 +1,5 @@
 {
-  "extends": "@org/config/tsconfig-react-lib.json",
+  "extends": "@kitakita/config/tsconfig-react-lib.json",
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -59,10 +59,10 @@ importers:
   apps/client:
     specifiers:
       '@apollo/client': ^3.7.3
-      '@org/codegen': workspace:0.0.0
-      '@org/config': workspace:0.0.0
-      '@org/constants': workspace:0.0.0
-      '@org/design': workspace:0.0.0
+      '@kitakita/codegen': workspace:0.0.0
+      '@kitakita/config': workspace:0.0.0
+      '@kitakita/constants': workspace:0.0.0
+      '@kitakita/design': workspace:0.0.0
       '@types/node': ^18.11.18
       '@types/react': 18.0.26
       '@types/react-datepicker': ^4.8.0
@@ -78,15 +78,15 @@ importers:
       typescript: ^4.9.4
     dependencies:
       '@apollo/client': 3.7.3_gdcq4dv6opitr3wbfwyjmanyra
-      '@org/design': link:../../packages/design
+      '@kitakita/design': link:../../packages/design
       clsx: 1.2.1
       next: 13.1.1_3duxcpitbtplz62feflag7fwby
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
-      '@org/codegen': link:../../packages/codegen
-      '@org/config': link:../../packages/config
-      '@org/constants': link:../../packages/constants
+      '@kitakita/codegen': link:../../packages/codegen
+      '@kitakita/config': link:../../packages/config
+      '@kitakita/constants': link:../../packages/constants
       '@types/node': 18.11.18
       '@types/react': 18.0.26
       '@types/react-datepicker': 4.8.0_biqbaboplfbrettd7655fr4n2y
@@ -107,8 +107,8 @@ importers:
       '@nestjs/mercurius': ^10.1.7
       '@nestjs/platform-fastify': ^9.2.1
       '@nestjs/schematics': ^9.0.4
-      '@org/config': workspace:0.0.0
-      '@org/constants': workspace:0.0.0
+      '@kitakita/config': workspace:0.0.0
+      '@kitakita/constants': workspace:0.0.0
       '@types/jsonwebtoken': ^9.0.0
       '@types/node': ^18.11.18
       class-transformer: ^0.5.1
@@ -147,8 +147,8 @@ importers:
     devDependencies:
       '@nestjs/cli': 9.1.8
       '@nestjs/schematics': 9.0.4_typescript@4.9.4
-      '@org/config': link:../../packages/config
-      '@org/constants': link:../../packages/constants
+      '@kitakita/config': link:../../packages/config
+      '@kitakita/constants': link:../../packages/constants
       '@types/jsonwebtoken': 9.0.0
       '@types/node': 18.11.18
       source-map-support: 0.5.21
@@ -166,8 +166,8 @@ importers:
       '@graphql-codegen/typescript': ^2.8.7
       '@graphql-codegen/typescript-operations': ^2.5.12
       '@graphql-codegen/typescript-react-apollo': ^3.3.7
-      '@org/config': workspace:0.0.0
-      '@org/constants': workspace:0.0.0
+      '@kitakita/config': workspace:0.0.0
+      '@kitakita/constants': workspace:0.0.0
       graphql: ^16.6.0
       graphql-tag: ^2.12.6
       nodemon: ^2.0.20
@@ -181,8 +181,8 @@ importers:
       '@graphql-codegen/typescript': 2.8.7_graphql@16.6.0
       '@graphql-codegen/typescript-operations': 2.5.12_graphql@16.6.0
       '@graphql-codegen/typescript-react-apollo': 3.3.7_sy4knu3obj4ys7pjcqbyfxmqle
-      '@org/config': link:../config
-      '@org/constants': link:../constants
+      '@kitakita/config': link:../config
+      '@kitakita/constants': link:../constants
       nodemon: 2.0.20
 
   packages/config:
@@ -193,13 +193,13 @@ importers:
 
   packages/constants:
     specifiers:
-      '@org/config': workspace:0.0.0
+      '@kitakita/config': workspace:0.0.0
     devDependencies:
-      '@org/config': link:../config
+      '@kitakita/config': link:../config
 
   packages/design:
     specifiers:
-      '@org/config': workspace:0.0.0
+      '@kitakita/config': workspace:0.0.0
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.10
       clsx: ^1.2.1
@@ -210,7 +210,7 @@ importers:
     dependencies:
       clsx: 1.2.1
     devDependencies:
-      '@org/config': link:../config
+      '@kitakita/config': link:../config
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
       next: 13.1.1_biqbaboplfbrettd7655fr4n2y

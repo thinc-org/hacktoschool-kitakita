@@ -1,5 +1,5 @@
 {
-  "name": "@org/design",
+  "name": "@kitakita/design",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -11,7 +11,7 @@
     "clsx": "^1.2.1"
   },
   "devDependencies": {
-    "@org/config": "workspace:0.0.0",
+    "@kitakita/config": "workspace:0.0.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
     "next": "13.1.1",

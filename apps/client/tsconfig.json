@@ -1,5 +1,5 @@
 {
-  "extends": "@org/config/tsconfig-next.json",
+  "extends": "@kitakita/config/tsconfig-next.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

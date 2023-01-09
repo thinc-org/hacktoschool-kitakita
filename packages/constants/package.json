@@ -1,5 +1,5 @@
 {
-  "name": "@org/constants",
+  "name": "@kitakita/constants",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -8,6 +8,6 @@
     "format": "eslint src --fix"
   },
   "devDependencies": {
-    "@org/config": "workspace:0.0.0"
+    "@kitakita/config": "workspace:0.0.0"
   }
 }

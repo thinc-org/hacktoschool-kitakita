@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import { ApolloProvider } from "@apollo/client";
 
-import { createApolloClient } from "@org/codegen";
+import { createApolloClient } from "@kitakita/codegen";
 
 import "$styles/global.scss";
 

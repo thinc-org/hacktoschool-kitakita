@@ -1,5 +1,5 @@
-import { useUserCountQuery } from "@org/codegen";
-import { Button } from "@org/design";
+import { useUserCountQuery } from "@kitakita/codegen";
+import { Button } from "@kitakita/design";
 
 import { MyPage } from "$core/@types";
 
