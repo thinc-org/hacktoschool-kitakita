@@ -11,7 +11,6 @@ export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
       className="font-semibold hover:cursor-pointer hover:text-cyan-dark"
       role="presentation"
       onClick={() => link !== "-" && (window.location.href = link)}
-      onKeyDown={() => link !== "-" && (window.location.href = link)}
     >
       {text}
     </div>

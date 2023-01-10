@@ -20,14 +20,12 @@ export const Navbar: FC = () => {
             className="text-2xl hover:cursor-pointer lg:hidden"
             role="presentation"
             onClick={() => setNavbarOpen(!navbarOpen)}
-            onKeyDown={() => setNavbarOpen(!navbarOpen)}
           />
         ) : (
           <FilterLeft
             className="text-2xl hover:cursor-pointer lg:hidden"
             role="presentation"
             onClick={() => setNavbarOpen(!navbarOpen)}
-            onKeyDown={() => setNavbarOpen(!navbarOpen)}
           />
         )}
         <div className="flex items-center">
@@ -47,7 +45,6 @@ export const Navbar: FC = () => {
               className="relative flex items-center"
               role="presentation"
               onClick={() => setGamesOpen(!gamesOpen)}
-              onKeyDown={() => setGamesOpen(!gamesOpen)}
             >
               Games
               <ChevronDown className="ml-1 hidden text-[10px] font-bold text-gray-dark hover:text-black lg:block" />
@@ -66,7 +63,6 @@ export const Navbar: FC = () => {
             className="relative ml-1 flex items-baseline hover:cursor-pointer lg:hover:cursor-default"
             role="presentation"
             onClick={() => setUserOpen(!userOpen)}
-            onKeyDown={() => setUserOpen(!userOpen)}
           >
             <p className="text-xs font-semibold text-gray-dark lg:ml-2.5 lg:text-base">
               Alex
@@ -82,7 +78,6 @@ export const Navbar: FC = () => {
             className="ml-7 hidden text-base font-bold hover:cursor-pointer lg:block"
             role="presentation"
             onClick={() => console.log("logout")}
-            onKeyDown={() => console.log("logout")}
           >
             Sign Out <span>&#10132;</span>
           </p>

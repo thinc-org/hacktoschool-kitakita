@@ -16,7 +16,6 @@ export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
       }
       role="presentation"
       onClick={() => link !== "-" && (window.location.href = link)}
-      onKeyDown={() => console.log(link)}
     >
       {children}
     </div>
