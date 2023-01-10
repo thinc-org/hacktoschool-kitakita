@@ -10,4 +10,8 @@ export class ConfigService {
   get port(): Configuration["port"] {
     return this.configService.get("port") || defaultConfig.port;
   }
+
+  get jwt(): Configuration["jwt"] {
+    return this.configService.get("jwt") || defaultConfig.jwt;
+  }
 }
