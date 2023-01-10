@@ -36,6 +36,9 @@ jobs:
       - name: ESLint & Prettier Check
         run: pnpm lint
 
+      - name: Unit Test
+        run: pnpm test
+
       - name: CRLF Phobia
         run: pnpm crlf-phobia *
 
