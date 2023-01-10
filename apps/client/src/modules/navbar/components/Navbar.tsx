@@ -1,5 +1,4 @@
 import { FC, useState } from "react";
-
 import { ChevronDown, FilterLeft, XLg } from "react-bootstrap-icons";
 
 import { Overlay } from "$modules/navbar/components/Overlay";
@@ -17,7 +16,6 @@ export const Navbar: FC = () => {
     <>
       <div className="flex h-12 w-screen items-center justify-between border-b bg-gray-light py-2 px-6 lg:py-8 lg:px-64">
         {navbarOpen ? (
-
           <XLg
             className="text-2xl hover:cursor-pointer lg:hidden"
             role="presentation"
