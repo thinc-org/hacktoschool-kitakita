@@ -6,6 +6,7 @@ import { PrismaService } from "./prisma.service";
 
 import { AppController } from "./app.controller";
 
+import { AuthModule } from "./auth/auth.module";
 import { ConfigModule } from "./config/config.module";
 import { UserModule } from "./user/user.module";
 
@@ -18,6 +19,7 @@ import { UserModule } from "./user/user.module";
       autoSchemaFile: "./src/@generated/schema.graphql",
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [PrismaService],

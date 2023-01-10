@@ -1,0 +1,5 @@
+{
+  "extends": "@kitakita/config/tsconfig-app.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "build", "node_modules"]
+}
