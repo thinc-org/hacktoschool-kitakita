@@ -16,17 +16,19 @@ export const Navbar: FC = () => {
     <>
       <div className="flex h-12 w-screen items-center justify-between border-b bg-gray-light py-2 px-6 lg:py-8 lg:px-64">
         {navbarOpen ? (
-          <XLg
+          <button
             className="text-2xl hover:cursor-pointer lg:hidden"
-            role="presentation"
             onClick={() => setNavbarOpen(!navbarOpen)}
-          />
+          >
+            <XLg />
+          </button>
         ) : (
-          <FilterLeft
+          <button
             className="text-2xl hover:cursor-pointer lg:hidden"
-            role="presentation"
             onClick={() => setNavbarOpen(!navbarOpen)}
-          />
+          >
+            <FilterLeft />
+          </button>
         )}
         <div className="flex items-center">
           <p className="font-sans text-base lg:text-xl">GlobalTalk</p>
@@ -41,27 +43,31 @@ export const Navbar: FC = () => {
             Statistics
           </DesktopItem>
           <DesktopItem active={false} link="-">
-            <div
+            <button
               className="relative flex items-center"
-              role="presentation"
               onClick={() => setGamesOpen(!gamesOpen)}
             >
               Games
               <ChevronDown className="ml-1 hidden text-[10px] font-bold text-gray-dark hover:text-black lg:block" />
               {gamesOpen && (
                 <HoverCard style={{ top: 32 }}>
-                  <CardItem link="sprint" text="Sprint &#10132;" />
-                  <CardItem link="audiocall" text="Audio-call &#10132;" />
+                  <CardItem link="sprint">
+                    <span>Sprint </span>
+                    <span>&#10132;</span>
+                  </CardItem>
+                  <CardItem link="audiocall">
+                    <span>Audio-call </span>
+                    <span>&#10132;</span>
+                  </CardItem>
                 </HoverCard>
               )}
-            </div>
+            </button>
           </DesktopItem>
         </div>
         <div className="flex items-baseline">
           <ProfilePic character="A" />
-          <div
+          <button
             className="relative ml-1 flex items-baseline hover:cursor-pointer lg:hover:cursor-default"
-            role="presentation"
             onClick={() => setUserOpen(!userOpen)}
           >
             <p className="text-xs font-semibold text-gray-dark lg:ml-2.5 lg:text-base">
@@ -70,17 +76,19 @@ export const Navbar: FC = () => {
             <ChevronDown className="ml-1 text-[10px] text-gray-dark lg:hidden" />
             {userOpen && (
               <HoverCard mobile={true} style={{ top: 30, right: 0 }}>
-                <CardItem link="logout" text="Sign Out &#10132;" />
+                <CardItem link="logout">
+                  <span>Sign Out </span>
+                  <span>&#10132;</span>
+                </CardItem>
               </HoverCard>
             )}
-          </div>
-          <p
+          </button>
+          <button
             className="ml-7 hidden text-base font-bold hover:cursor-pointer lg:block"
-            role="presentation"
             onClick={() => console.log("logout")}
           >
-            Sign Out <span>&#10132;</span>
-          </p>
+            <span>Sign Out &#10132;</span>
+          </button>
         </div>
       </div>
       <Overlay show={navbarOpen} />
