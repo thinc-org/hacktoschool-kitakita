@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "format": "eslint src --fix"
+  },
   "devDependencies": {
     "@kitakita/config": "workspace:0.0.0",
     "@types/jsonwebtoken": "^9.0.0",
