@@ -17,5 +17,3 @@ export const CardItem: FC<CardItemProps> = ({ children, link }) => {
     </Link>
   );
 };
-
-CardItem.displayName = "CardItem";
