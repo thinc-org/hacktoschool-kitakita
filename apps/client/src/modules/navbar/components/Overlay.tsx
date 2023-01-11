@@ -18,7 +18,7 @@ export const Overlay: FC<IOverlay> = ({ show }) => {
     >
       <ul className="h-100 space-y-8 text-center text-gray-dark">
         <li>
-          <OverlayItem link="" text="Main" />
+          <OverlayItem text="Main" />
         </li>
         <li>
           <OverlayItem link="textbook" text="Textbook" />

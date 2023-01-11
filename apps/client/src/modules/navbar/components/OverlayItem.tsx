@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface IOverlayItem {
   text: string;
-  link: string;
+  link?: string;
 }
 
 export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
