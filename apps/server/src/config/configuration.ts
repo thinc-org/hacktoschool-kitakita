@@ -15,7 +15,7 @@ export const defaultConfig: Configuration = {
 };
 
 export default (): Configuration => ({
-  port: parseInt(process.env.PORT ?? "", 10) || defaultConfig.port,
+  port: parseInt(process.env.BACKEND_PORT ?? "", 10) || defaultConfig.port,
   jwt: {
     secret: process.env.JWT_SECRET ?? defaultConfig.jwt.secret,
     expire:
