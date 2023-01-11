@@ -2,13 +2,13 @@ import { FC } from "react";
 
 import clsx from "clsx";
 
-interface IHoverCard {
+type HoverCardProps = {
   children: React.ReactNode;
   style: object;
   mobile?: boolean;
-}
+};
 
-export const HoverCard: FC<IHoverCard> = ({ children, mobile, style }) => {
+export const HoverCard: FC<HoverCardProps> = ({ children, mobile, style }) => {
   return (
     <div
       className={clsx(
