@@ -4,11 +4,11 @@ import Link from "next/link";
 
 import clsx from "clsx";
 
-type IDesktopItem {
+type IDesktopItem = {
   active: boolean;
   link?: string;
   children: React.ReactNode;
-}
+};
 
 export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
   return (

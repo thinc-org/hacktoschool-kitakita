@@ -1,4 +1,4 @@
-export { NavBar } from "./NavBar/Navbar";
+export { NavBar } from "./NavBar/NavBar";
 export {
   SectionOne,
   SectionFour,
