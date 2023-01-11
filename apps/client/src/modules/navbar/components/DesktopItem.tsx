@@ -17,7 +17,7 @@ export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
         "ml-8 hidden font-semibold hover:cursor-pointer hover:text-black lg:block",
         active ? "text-black" : "text-gray-dark"
       )}
-      href={link || ""}
+      href={link || "/"}
     >
       {children}
     </Link>

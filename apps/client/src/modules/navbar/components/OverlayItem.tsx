@@ -11,7 +11,7 @@ export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
   return (
     <Link
       className="font-semibold hover:cursor-pointer hover:text-cyan-dark"
-      href={link || ""}
+      href={link || "/"}
     >
       {text}
     </Link>
