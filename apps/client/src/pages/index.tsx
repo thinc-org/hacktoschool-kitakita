@@ -1,10 +1,10 @@
 import { MyPage } from "$core/@types";
-import { Navbar } from "$modules/navbar/components/Navbar";
+import { NavBar } from "$modules/layouts";
 
 const IndexPage: MyPage = () => {
   return (
     <main className="h-screen w-screen bg-gray-light">
-      <Navbar />
+      <NavBar />
     </main>
   );
 };

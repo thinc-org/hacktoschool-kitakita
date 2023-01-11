@@ -36,5 +36,3 @@ export const Overlay: FC<OverlayProps> = ({ show }) => {
     </div>
   );
 };
-
-Overlay.displayName = "Overlay";

@@ -21,5 +21,3 @@ export const HoverCard: FC<HoverCardProps> = ({ children, mobile, style }) => {
     </div>
   );
 };
-
-HoverCard.displayName = "HoverCard";

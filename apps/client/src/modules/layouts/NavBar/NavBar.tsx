@@ -1,17 +1,17 @@
 import { FC, useState } from "react";
 import { ChevronDown, FilterLeft, XLg } from "react-bootstrap-icons";
 
-import { Overlay } from "$modules/navbar/components/Overlay";
-import { ProfilePic } from "$modules/navbar/components/ProfilePic";
+import { CardItem } from "./components/CardItem";
+import { DesktopItem } from "./components/DesktopItem";
+import { HoverCard } from "./components/HoverCard";
+import { Overlay } from "./components/Overlay";
+import { ProfilePic } from "./components/ProfilePic";
 
-import { CardItem } from "./CardItem";
-import { DesktopItem } from "./DesktopItem";
-import { HoverCard } from "./HoverCard";
-
-export const Navbar: FC = () => {
+export const NavBar: FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [gamesOpen, setGamesOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
+
   return (
     <>
       <div className="flex h-12 w-screen items-center justify-between border-b bg-gray-light py-2 px-6 lg:py-8 lg:px-20 xl:px-40 2xl:px-64">
@@ -97,5 +97,3 @@ export const Navbar: FC = () => {
     </>
   );
 };
-
-Navbar.displayName = "Navbar";

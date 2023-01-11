@@ -17,5 +17,3 @@ export const OverlayItem: FC<OverlayItemProps> = ({ link, text }) => {
     </Link>
   );
 };
-
-OverlayItem.displayName = "OverlayItem";
