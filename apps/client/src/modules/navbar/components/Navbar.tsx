@@ -95,5 +95,3 @@ export const Navbar: FC = () => {
     </>
   );
 };
-
-Navbar.displayName = "Navbar";

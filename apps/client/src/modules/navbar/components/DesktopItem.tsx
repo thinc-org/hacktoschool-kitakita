@@ -23,5 +23,3 @@ export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
     </Link>
   );
 };
-
-DesktopItem.displayName = "DesktopItem";

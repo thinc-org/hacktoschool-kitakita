@@ -36,5 +36,3 @@ export const Overlay: FC<IOverlay> = ({ show }) => {
     </div>
   );
 };
-
-Overlay.displayName = "Overlay";

@@ -11,5 +11,3 @@ export const ProfilePic: FC<IProfilePic> = ({ character }) => {
     </div>
   );
 };
-
-ProfilePic.displayName = "ProfilePic";

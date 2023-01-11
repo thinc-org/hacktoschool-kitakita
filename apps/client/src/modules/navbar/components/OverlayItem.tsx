@@ -17,5 +17,3 @@ export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
     </Link>
   );
 };
-
-OverlayItem.displayName = "OverlayItem";
