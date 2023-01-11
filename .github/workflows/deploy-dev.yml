@@ -1,0 +1,27 @@
+name: Deploy Dev Image
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  deploy_image:
+    name: Deploy Docker Image to Registry
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ secrets.IMAGE_REPO }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.IMAGE_REPO }}/kitakita/hacktoschool:latest
