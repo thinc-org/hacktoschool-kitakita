@@ -1,5 +1,9 @@
 import { FC } from "react";
 
+import Link from "next/link";
+
+import clsx from "clsx";
+
 interface IDesktopItem {
   active: boolean;
   link: string;
@@ -8,17 +12,15 @@ interface IDesktopItem {
 
 export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
   return (
-    <div
-      className={
-        active
-          ? "ml-8 hidden font-semibold text-black hover:cursor-pointer hover:text-black lg:block"
-          : "ml-8 hidden font-semibold text-gray-dark hover:cursor-pointer hover:text-black lg:block"
-      }
-      role="presentation"
-      onClick={() => link !== "-" && (window.location.href = link)}
+    <Link
+      className={clsx(
+        "ml-8 hidden font-semibold hover:cursor-pointer hover:text-black lg:block",
+        active ? "text-black" : "text-gray-dark"
+      )}
+      href={link === "-" ? "" : link}
     >
       {children}
-    </div>
+    </Link>
   );
 };
 

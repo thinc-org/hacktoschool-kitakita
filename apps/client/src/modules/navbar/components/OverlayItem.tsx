@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import Link from "next/link";
+
 interface IOverlayItem {
   text: string;
   link: string;
@@ -7,13 +9,12 @@ interface IOverlayItem {
 
 export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
   return (
-    <div
+    <Link
       className="font-semibold hover:cursor-pointer hover:text-cyan-dark"
-      role="presentation"
-      onClick={() => link !== "-" && (window.location.href = link)}
+      href={link === "-" ? "" : link}
     >
       {text}
-    </div>
+    </Link>
   );
 };
 
