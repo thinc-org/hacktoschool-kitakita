@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 type IDesktopItem = {
   active: boolean;
-  link?: string;
+  link: string;
   children: React.ReactNode;
 };
 

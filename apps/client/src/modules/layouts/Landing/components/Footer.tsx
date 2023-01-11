@@ -10,27 +10,27 @@ export const Footer: FC = () => {
   return (
     <div className="flex h-1/2 w-screen flex-col items-center bg-gray-light lg:h-2/5 lg:items-center lg:justify-center">
       <div className="mr-16 mt-10 grid w-3/5 grid-flow-col grid-rows-5 gap-3 gap-x-24 text-xs lg:hidden">
-        <FooterItem link="">Home</FooterItem>
-        <FooterItem link="">Textbook</FooterItem>
-        <FooterItem link="">Statistics</FooterItem>
-        <FooterItem link="">Sprint</FooterItem>
-        <FooterItem link="">Audio-call</FooterItem>
-        <FooterItem link="">Kita</FooterItem>
-        <FooterItem link="">Hitori</FooterItem>
-        <FooterItem link="">Nikita</FooterItem>
+        <FooterItem link="/">Home</FooterItem>
+        <FooterItem link="/textbook">Textbook</FooterItem>
+        <FooterItem link="/stats">Statistics</FooterItem>
+        <FooterItem link="/sprint">Sprint</FooterItem>
+        <FooterItem link="/audio">Audio-call</FooterItem>
+        <FooterItem link="/">Kita</FooterItem>
+        <FooterItem link="/">Hitori</FooterItem>
+        <FooterItem link="/">Nikita</FooterItem>
       </div>
       <div className="flex w-4/5 justify-between text-sm font-semibold text-gray-dark">
         <div className="flex hidden w-1/2 space-x-6 lg:block">
-          <FooterItem link="">Home</FooterItem>
-          <FooterItem link="">Textbook</FooterItem>
-          <FooterItem link="">Statistics</FooterItem>
-          <FooterItem link="">Sprint</FooterItem>
-          <FooterItem link="">Audio-call</FooterItem>
+          <FooterItem link="/">Home</FooterItem>
+          <FooterItem link="/textbook">Textbook</FooterItem>
+          <FooterItem link="/stats">Statistics</FooterItem>
+          <FooterItem link="/sprint">Sprint</FooterItem>
+          <FooterItem link="/audio">Audio-call</FooterItem>
         </div>
         <div className="w-1/8 flex hidden space-x-6 lg:block">
-          <FooterItem link="">Kita</FooterItem>
-          <FooterItem link="">Hitori</FooterItem>
-          <FooterItem link="">Nikita</FooterItem>
+          <FooterItem link="/">Kita</FooterItem>
+          <FooterItem link="/">Hitori</FooterItem>
+          <FooterItem link="/">Nikita</FooterItem>
         </div>
       </div>
       <div className="mt-5 flex w-4/5 flex-col border-t-2 pt-6 lg:flex-row lg:items-baseline lg:justify-between">

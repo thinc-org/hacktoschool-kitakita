@@ -1,5 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 
+import clsx from "clsx";
+
 interface ButtonProps extends PropsWithChildren {
   onClick?: () => void;
   textColor: string;
@@ -14,12 +16,14 @@ export const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`rounded-full px-5 bg-${backgroundColor} py-3 text-sm font-bold text-${textColor} transition-colors hover:bg-black hover:text-white`}
+      className={clsx(
+        "rounded-full px-5 py-3 text-sm font-bold transition-colors hover:bg-black hover:text-white",
+        "bg-" + backgroundColor,
+        "text-" + textColor
+      )}
       onClick={onClick}
     >
       {children}
     </button>
   );
 };
-
-Button.displayName = "Button";

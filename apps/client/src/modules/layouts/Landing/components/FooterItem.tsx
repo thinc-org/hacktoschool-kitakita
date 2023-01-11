@@ -2,18 +2,18 @@ import { FC } from "react";
 
 import Link from "next/link";
 
-interface IFooterItem {
-  link?: string;
+type FooterItemProps = {
+  link: string;
   children: React.ReactNode;
-}
+};
 
-export const FooterItem: FC<IFooterItem> = ({ children, link }) => {
+export const FooterItem: FC<FooterItemProps> = ({ children, link }) => {
   return (
     <Link
       className={
         "font-semibold text-gray-dark hover:cursor-pointer hover:text-black"
       }
-      href={link || "/"}
+      href={link ?? "/"}
     >
       {children}
     </Link>

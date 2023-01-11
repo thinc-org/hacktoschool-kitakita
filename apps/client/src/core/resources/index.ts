@@ -1,16 +1,16 @@
-import blurryGame from "$core/resources/blurryGame.svg";
-import blurryTree from "$core/resources/blurryTree.svg";
-import boyBook from "$core/resources/boyBook.svg";
-import boyGirl from "$core/resources/boyGirl.svg";
-import console from "$core/resources/console.svg";
-import gT from "$core/resources/gT.svg";
-import girlBook from "$core/resources/girlBook.svg";
-import girlIpad from "$core/resources/girlIpad.svg";
-import github from "$core/resources/github.svg";
-import megaphone from "$core/resources/megaphone.svg";
-import pinkShoes from "$core/resources/pinkShoes.svg";
-import thunder from "$core/resources/thunder.svg";
-import youtube from "$core/resources/youtube.svg";
+import blurryGame from "./blurryGame.svg";
+import blurryTree from "./blurryTree.svg";
+import boyBook from "./boyBook.svg";
+import boyGirl from "./boyGirl.svg";
+import console from "./console.svg";
+import gT from "./gT.svg";
+import girlBook from "./girlBook.svg";
+import girlIpad from "./girlIpad.svg";
+import github from "./github.svg";
+import megaphone from "./megaphone.svg";
+import pinkShoes from "./pinkShoes.svg";
+import thunder from "./thunder.svg";
+import youtube from "./youtube.svg";
 
 export {
   thunder,
