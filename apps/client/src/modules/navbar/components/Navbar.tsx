@@ -35,16 +35,14 @@ export const Navbar: FC = () => {
             GlobalTalk
           </p>
           <p className="ml-8 hidden text-[#E0E0E0] lg:block">|</p>
-          <DesktopItem active={true} link="">
-            Home
-          </DesktopItem>
+          <DesktopItem active={true}>Home</DesktopItem>
           <DesktopItem active={false} link="textbook">
             Textbook
           </DesktopItem>
           <DesktopItem active={false} link="stats">
             Statistics
           </DesktopItem>
-          <DesktopItem active={false} link="-">
+          <DesktopItem active={false}>
             <button
               className="relative flex items-center"
               onClick={() => setGamesOpen(!gamesOpen)}

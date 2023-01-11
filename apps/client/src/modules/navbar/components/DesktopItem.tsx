@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 interface IDesktopItem {
   active: boolean;
-  link: string;
+  link?: string;
   children: React.ReactNode;
 }
 
@@ -17,7 +17,7 @@ export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
         "ml-8 hidden font-semibold hover:cursor-pointer hover:text-black lg:block",
         active ? "text-black" : "text-gray-dark"
       )}
-      href={link === "-" ? "" : link}
+      href={link || ""}
     >
       {children}
     </Link>
