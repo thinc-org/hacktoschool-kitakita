@@ -1,4 +1,4 @@
-name: PR Title Lint
+name: Automation Test
 
 on:
   pull_request:
