@@ -1,20 +1,20 @@
 import { FC } from "react";
 
-interface IOverlayItem {
+import Link from "next/link";
+
+type OverlayItemProps = {
   text: string;
   link: string;
-}
+};
 
-export const OverlayItem: FC<IOverlayItem> = ({ link, text }) => {
+export const OverlayItem: FC<OverlayItemProps> = ({ link, text }) => {
   return (
-    <div
+    <Link
       className="font-semibold hover:cursor-pointer hover:text-cyan-dark"
-      role="presentation"
-      onClick={() => link !== "-" && (window.location.href = link)}
-      onKeyDown={() => link !== "-" && (window.location.href = link)}
+      href={link ?? "/"}
     >
       {text}
-    </div>
+    </Link>
   );
 };
 

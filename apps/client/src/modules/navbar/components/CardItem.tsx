@@ -1,20 +1,20 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
-interface ICardItem {
-  text: string;
+import Link from "next/link";
+
+type CardItemProps = {
   link: string;
-}
+  children: ReactNode;
+};
 
-export const CardItem: FC<ICardItem> = ({ link, text }) => {
+export const CardItem: FC<CardItemProps> = ({ children, link }) => {
   return (
-    <div
-      className="m-2 w-36 text-gray-dark hover:text-black"
-      role="presentation"
-      onClick={() => link !== "-" && (window.location.href = link)}
-      onKeyDown={() => link !== "-" && (window.location.href = link)}
+    <Link
+      className="text-start text-gray-dark hover:text-black"
+      href={link ?? "/"}
     >
-      {text}
-    </div>
+      <div className="m-2 w-36">{children}</div>
+    </Link>
   );
 };
 

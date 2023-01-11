@@ -1,18 +1,22 @@
 import { FC } from "react";
 
-interface IHoverCard {
+import clsx from "clsx";
+
+type HoverCardProps = {
   children: React.ReactNode;
   style: object;
   mobile?: boolean;
-}
+};
 
-export const HoverCard: FC<IHoverCard> = ({ children, mobile, style }) => {
-  return mobile ? (
-    <div className="absolute rounded-2xl bg-white p-4 lg:hidden" style={style}>
-      {children}
-    </div>
-  ) : (
-    <div className="absolute rounded-2xl bg-white p-4" style={style}>
+export const HoverCard: FC<HoverCardProps> = ({ children, mobile, style }) => {
+  return (
+    <div
+      className={clsx(
+        "absolute rounded-2xl bg-white p-4",
+        mobile && "lg:hidden"
+      )}
+      style={style}
+    >
       {children}
     </div>
   );
