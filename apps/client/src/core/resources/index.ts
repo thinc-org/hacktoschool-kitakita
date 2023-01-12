@@ -1,29 +1,13 @@
-import blurryGame from "./blurryGame.svg";
-import blurryTree from "./blurryTree.svg";
-import boyBook from "./boyBook.svg";
-import boyGirl from "./boyGirl.svg";
-import console from "./console.svg";
-import gT from "./gT.svg";
-import girlBook from "./girlBook.svg";
-import girlIpad from "./girlIpad.svg";
-import github from "./github.svg";
-import megaphone from "./megaphone.svg";
-import pinkShoes from "./pinkShoes.svg";
-import thunder from "./thunder.svg";
-import youtube from "./youtube.svg";
-
-export {
-  thunder,
-  console,
-  boyBook,
-  blurryTree,
-  blurryGame,
-  girlIpad,
-  pinkShoes,
-  megaphone,
-  girlBook,
-  boyGirl,
-  gT,
-  youtube,
-  github,
-};
+export { default as blurryGame } from "./blurryGame.svg";
+export { default as thunder } from "./thunder.svg";
+export { default as console } from "./console.svg";
+export { default as boyBook } from "./boyBook.svg";
+export { default as blurryTree } from "./blurryTree.svg";
+export { default as girlIpad } from "./girlIpad.svg";
+export { default as pinkShoes } from "./pinkShoes.svg";
+export { default as megaphone } from "./megaphone.svg";
+export { default as girlBook } from "./girlBook.svg";
+export { default as boyGirl } from "./boyGirl.svg";
+export { default as gT } from "./gT.svg";
+export { default as youtube } from "./youtube.svg";
+export { default as github } from "./github.svg";

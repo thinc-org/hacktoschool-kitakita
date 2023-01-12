@@ -4,13 +4,17 @@ import Link from "next/link";
 
 import clsx from "clsx";
 
-type IDesktopItem = {
+type DesktopItemProps = {
   active: boolean;
   link: string;
   children: React.ReactNode;
 };
 
-export const DesktopItem: FC<IDesktopItem> = ({ active, children, link }) => {
+export const DesktopItem: FC<DesktopItemProps> = ({
+  active,
+  children,
+  link,
+}) => {
   return (
     <Link
       className={clsx(
