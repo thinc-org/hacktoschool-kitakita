@@ -15,10 +15,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Turbo Next Nest GraphQL Prisma</title>
+        <title>Globaltalk Kitakita Edition</title>
         <meta
-          content="My personal stack for production app"
+          content="Thinc x Cleverse Hack to School Team Kitakita Programming Kita~n Ikuyo!"
           name="description"
+        />
+
+        <meta
+          content="https://kita.cunny.dev/images/globaltalkog.png"
+          property="og:image"
         />
       </Head>
 
