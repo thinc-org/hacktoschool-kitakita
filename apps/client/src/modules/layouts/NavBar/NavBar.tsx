@@ -1,19 +1,18 @@
 import { FC, useState } from "react";
 import { ChevronDown, FilterLeft, XLg } from "react-bootstrap-icons";
 
-import Link from "next/link";
-
 import { CardItem } from "./components/CardItem";
 import { DesktopItem } from "./components/DesktopItem";
 import { HoverCard } from "./components/HoverCard";
 import { Overlay } from "./components/Overlay";
-import { ProfilePic } from "./components/ProfilePic";
+import { SignIn } from "./components/SignIn";
+import { SignOut } from "./components/SignOut";
 
 export const NavBar: FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [gamesOpen, setGamesOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
-  const auth = false;
+  const auth = true;
 
   return (
     <>
@@ -70,80 +69,9 @@ export const NavBar: FC = () => {
           </DesktopItem>
         </div>
         {auth ? (
-          <div className="flex items-baseline">
-            <ProfilePic character="A" />
-            <button
-              className="relative ml-1 flex items-baseline hover:cursor-pointer lg:hover:cursor-default"
-              onClick={() => setUserOpen(!userOpen)}
-            >
-              <p className="text-xs font-semibold text-gray-dark lg:ml-2.5 lg:text-base">
-                Alex
-              </p>
-              <ChevronDown className="ml-1 text-[10px] text-gray-dark lg:hidden" />
-              {userOpen && (
-                <HoverCard mobile={true} style={{ top: 30, right: 0 }}>
-                  <CardItem link="logout">
-                    <span>Sign Out </span>
-                    <span>&#10132;</span>
-                  </CardItem>
-                </HoverCard>
-              )}
-            </button>
-            <button className="ml-7 hidden text-base font-bold hover:cursor-pointer lg:block">
-              <Link
-                className="hover:text-cyan-dark hover:underline"
-                href="/logout"
-              >
-                Sign Out &#10132;
-              </Link>
-            </button>
-          </div>
+          <SignOut setUserOpen={setUserOpen} userOpen={userOpen} />
         ) : (
-          <div className="flex items-baseline">
-            <button
-              className="relative ml-1 flex items-baseline hover:cursor-pointer lg:hover:cursor-default"
-              onClick={() => setUserOpen(!userOpen)}
-            >
-              <p className="text-xs font-semibold text-gray-dark lg:ml-2.5 lg:hidden">
-                Sign In
-              </p>
-              <ChevronDown className="ml-1 text-[10px] text-gray-dark lg:hidden" />
-              {userOpen && (
-                <HoverCard mobile={true} style={{ top: 30, right: 0 }}>
-                  <CardItem link="login">
-                    <span>Login </span>
-                    <span>&#10132;</span>
-                  </CardItem>
-                  <CardItem link="register">
-                    <span>Register </span>
-                    <span>&#10132;</span>
-                  </CardItem>
-                </HoverCard>
-              )}
-            </button>
-            <button
-              className="ml-7 hidden text-base font-bold hover:cursor-pointer lg:block"
-              onClick={() => console.log("login")}
-            >
-              <Link
-                className="hover:text-cyan-dark hover:underline"
-                href="/login"
-              >
-                Login &#10132;
-              </Link>
-            </button>
-            <button
-              className="ml-7 hidden text-base font-bold hover:cursor-pointer lg:block"
-              onClick={() => console.log("register")}
-            >
-              <Link
-                className="hover:text-cyan-dark hover:underline"
-                href="/register"
-              >
-                Register &#10132;
-              </Link>
-            </button>
-          </div>
+          <SignIn setUserOpen={setUserOpen} userOpen={userOpen} />
         )}
       </div>
       <Overlay show={navbarOpen} />
