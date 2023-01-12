@@ -55,21 +55,21 @@ jobs:
       - name: Run Prisma Migration
         run: pnpm prisma migrate deploy
 
-  # ssh:
-  #   name: SSH and restart docker compose
-  #   runs-on: ubuntu-latest
-  #   needs: [image]
+  ssh:
+    name: SSH and restart docker compose
+    runs-on: ubuntu-latest
+    needs: [image]
 
-  #   steps:
-  #     - name: SSH and restart docker compose
-  #       uses: appleboy/ssh-action@master
-  #       with:
-  #         host: ${{ secrets.SSH_HOST }}
-  #         username: leomotors
-  #         key: ${{ secrets.SSH_KEY }}
-  #         passphrase: ${{ secrets.SSH_PASSPHRASE }}
-  #         script: |
-  #           cd kitakita
-  #           docker compose pull
-  #           docker compose down
-  #           docker compose up -d
+    steps:
+      - name: SSH and restart docker compose
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: leomotors
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: |
+            cd kitakita
+            docker compose pull
+            docker compose down
+            docker compose up -d
