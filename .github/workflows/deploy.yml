@@ -1,0 +1,75 @@
+name: Deploy Image
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  image:
+    name: Build and Deploy Docker Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Login via Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build and push image
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - run: |
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/kitakita:latest
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/kitakita:latest
+
+  migrate:
+    name: Run database migrations
+    runs-on: ubuntu-latest
+    needs: [image]
+
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: PNPM Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Prisma Migration
+        run: pnpm prisma migrate deploy
+
+  # ssh:
+  #   name: SSH and restart docker compose
+  #   runs-on: ubuntu-latest
+  #   needs: [image]
+
+  #   steps:
+  #     - name: SSH and restart docker compose
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.SSH_HOST }}
+  #         username: leomotors
+  #         key: ${{ secrets.SSH_KEY }}
+  #         passphrase: ${{ secrets.SSH_PASSPHRASE }}
+  #         script: |
+  #           cd kitakita
+  #           docker compose pull
+  #           docker compose down
+  #           docker compose up -d

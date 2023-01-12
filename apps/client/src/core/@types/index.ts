@@ -1,5 +1,8 @@
 import { NextPage } from "next";
 
+import { layouts } from "../layouts";
+
 export type MyPage<P = Record<string, unknown>, IP = P> = NextPage<P, IP> & {
-  // TODO Implement
+  layout?: keyof typeof layouts;
+  access?: "everyone" | "student" | "instructor" | "user" | "admin";
 };
