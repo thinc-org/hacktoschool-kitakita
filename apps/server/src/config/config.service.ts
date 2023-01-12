@@ -14,4 +14,8 @@ export class ConfigService {
   get jwt(): Configuration["jwt"] {
     return this.configService.get("jwt") || defaultConfig.jwt;
   }
+
+  get host(): Configuration["host"] {
+    return this.configService.get("host") || defaultConfig.host;
+  }
 }
