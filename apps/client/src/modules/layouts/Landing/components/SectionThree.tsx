@@ -18,7 +18,7 @@ export const SectionThree: FC = () => {
             <span className="block">word study</span>
           </h3>
           <div className="mt-4 ">
-            <Button backgroundColor="cyan-light" textColor="cyan-dark">
+            <Button backgroundColor="bg-cyan-light" textColor="text-cyan-dark">
               Textbook &#10132;
             </Button>
           </div>

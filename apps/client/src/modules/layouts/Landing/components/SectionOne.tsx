@@ -23,7 +23,7 @@ export const SectionOne: FC = () => {
           <span className="lg:block">with the platform.</span>
         </h3>
         <div className="mt-6 flex justify-center lg:justify-start">
-          <Button backgroundColor="cyan-light" textColor="cyan-dark">
+          <Button backgroundColor="bg-cyan-light" textColor="text-cyan-dark">
             About platform
           </Button>
         </div>

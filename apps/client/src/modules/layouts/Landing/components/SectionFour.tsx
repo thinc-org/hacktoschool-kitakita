@@ -50,7 +50,7 @@ export const SectionFour: FC = () => {
             <span className="block">learned, and mistakes</span>
           </h3>
           <div className="mt-6">
-            <Button backgroundColor="cyan-light" textColor="cyan-dark">
+            <Button backgroundColor="bg-cyan-light" textColor="text-cyan-dark">
               Statistics &#10132;
             </Button>
           </div>
