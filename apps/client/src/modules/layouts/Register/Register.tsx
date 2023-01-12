@@ -2,18 +2,20 @@ import { FC, useState } from "react";
 
 import Link from "next/link";
 
-import { Button, InputText } from "@kitakita/design";
+import { Button, InputRadio, InputText } from "@kitakita/design";
 
 interface IInput {
   username: string;
   password: string;
   passwordConfirm: string;
+  role: string;
 }
 
 const initialState: IInput = {
   username: "",
   password: "",
   passwordConfirm: "",
+  role: "",
 };
 
 export const Register: FC = () => {
@@ -51,6 +53,13 @@ export const Register: FC = () => {
           >
             Confirm Password
           </InputText>
+          <InputRadio
+            handleChange={(e) => updateInput("role", e.target.value)}
+            name="role"
+            values={["student", "teacher"]}
+          >
+            Select a role
+          </InputRadio>
           <div className="ml-4 w-1/2 lg:mt-6">
             <Button
               backgroundColor="bg-cyan-light"

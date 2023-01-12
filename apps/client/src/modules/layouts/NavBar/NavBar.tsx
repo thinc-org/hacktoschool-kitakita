@@ -12,7 +12,7 @@ export const NavBar: FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [gamesOpen, setGamesOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
-  const auth = true;
+  const auth = false;
 
   return (
     <>
