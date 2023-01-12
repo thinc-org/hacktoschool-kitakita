@@ -16,10 +16,10 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   app.enableCors();
 
-  await app.listen(configService.port);
+  await app.listen(configService.server.port, configService.server.host);
   console.log(
-    `Application is running on port ${configService.port}
-Localhost endpoint => http://localhost:${configService.port}/graphql
+    `Application is running on port ${configService.server.port}
+Localhost endpoint => http://localhost:${configService.server.port}/graphql
 Apollo Studio => https://studio.apollographql.com/sandbox/explorer`
   );
 }

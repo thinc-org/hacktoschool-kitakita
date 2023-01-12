@@ -1,5 +1,8 @@
 export type Configuration = {
-  port: number;
+  server: {
+    host: string;
+    port: number;
+  };
   jwt: {
     secret: string;
     expire: number;
@@ -7,7 +10,10 @@ export type Configuration = {
 };
 
 export const defaultConfig: Configuration = {
-  port: 3000,
+  server: {
+    host: "localhost",
+    port: 3000,
+  },
   jwt: {
     secret: "secret",
     expire: 0,
@@ -15,7 +21,11 @@ export const defaultConfig: Configuration = {
 };
 
 export default (): Configuration => ({
-  port: parseInt(process.env.BACKEND_PORT ?? "", 10) || defaultConfig.port,
+  server: {
+    host: process.env.BACKEND_HOST ?? defaultConfig.server.host,
+    port:
+      parseInt(process.env.BACKEND_PORT ?? "", 10) || defaultConfig.server.port,
+  },
   jwt: {
     secret: process.env.JWT_SECRET ?? defaultConfig.jwt.secret,
     expire:

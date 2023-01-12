@@ -7,8 +7,8 @@ import { Configuration, defaultConfig } from "./configuration";
 export class ConfigService {
   constructor(private configService: NestJSConfigService) {}
 
-  get port(): Configuration["port"] {
-    return this.configService.get("port") || defaultConfig.port;
+  get server(): Configuration["server"] {
+    return this.configService.get("server") || defaultConfig.server;
   }
 
   get jwt(): Configuration["jwt"] {
