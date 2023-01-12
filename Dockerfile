@@ -37,6 +37,7 @@ COPY apps/client/package.json ./apps/client/package.json
 COPY apps/server/package.json ./apps/server/package.json
 
 COPY --from=builder /kitakita/apps/client/.next ./apps/client/.next
+COPY --from=builder /kitakita/apps/client/public ./apps/client/public
 COPY --from=builder /kitakita/apps/server/dist ./apps/server/dist
 
 CMD ["pnpm", "start"]

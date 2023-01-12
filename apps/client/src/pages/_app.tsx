@@ -25,6 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="https://kita.cunny.dev/images/globaltalkog.png"
           property="og:image"
         />
+
+        {/* This is favicon, trust me, please */}
+        <link href="kita-wakuwaku.gif" rel="shortcut icon" type="image/gif" />
       </Head>
 
       <ApolloProvider client={client}>
