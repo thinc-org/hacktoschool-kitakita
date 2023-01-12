@@ -21,6 +21,9 @@ export const Overlay: FC<OverlayProps> = ({ show }) => {
           <OverlayItem link="/" text="Main" />
         </li>
         <li>
+          <OverlayItem link="/dashboard" text="Dashboard" />
+        </li>
+        <li>
           <OverlayItem link="/textbook" text="Textbook" />
         </li>
         <li>

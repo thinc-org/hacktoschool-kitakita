@@ -12,7 +12,7 @@ export const NavBar: FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [gamesOpen, setGamesOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
-  const auth = true;
+  const auth = false;
 
   return (
     <>
@@ -39,6 +39,9 @@ export const NavBar: FC = () => {
           <p className="ml-8 hidden text-[#E0E0E0] lg:block">|</p>
           <DesktopItem active={true} link="/">
             Home
+          </DesktopItem>
+          <DesktopItem active={false} link="/dashboard">
+            Dashboard
           </DesktopItem>
           <DesktopItem active={false} link="/textbook">
             Textbook

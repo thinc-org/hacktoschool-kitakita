@@ -2,18 +2,20 @@ import { FC, useState } from "react";
 
 import Link from "next/link";
 
-import { Button, InputText } from "@kitakita/design";
+import { Button, InputRadio, InputText } from "@kitakita/design";
 
 interface IInput {
   username: string;
   password: string;
   passwordConfirm: string;
+  role: string;
 }
 
 const initialState: IInput = {
   username: "",
   password: "",
   passwordConfirm: "",
+  role: "",
 };
 
 export const Register: FC = () => {

@@ -11,3 +11,5 @@ export { default as boyGirl } from "./boyGirl.svg";
 export { default as gT } from "./gT.svg";
 export { default as youtube } from "./youtube.svg";
 export { default as github } from "./github.svg";
+export { default as ajarnDaeng } from "./ajarnDaeng.gif";
+export { default as bocchi } from "./bocchi.gif";
