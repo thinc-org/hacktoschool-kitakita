@@ -4,14 +4,16 @@ export type Configuration = {
     secret: string;
     expire: number;
   };
+  host: string;
 };
 
 export const defaultConfig: Configuration = {
-  port: 3000,
+  port: 4201,
   jwt: {
     secret: "secret",
     expire: 0,
   },
+  host: "0.0.0.0",
 };
 
 export default (): Configuration => ({
@@ -21,4 +23,5 @@ export default (): Configuration => ({
     expire:
       parseInt(process.env.JWT_EXPIRE ?? "", 10) ?? defaultConfig.jwt.expire,
   },
+  host: process.env.BACKEND_HOST ?? defaultConfig.host,
 });
