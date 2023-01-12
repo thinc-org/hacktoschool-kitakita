@@ -18,8 +18,8 @@ export const Button: FC<ButtonProps> = ({
     <button
       className={clsx(
         "rounded-full px-5 py-3 text-sm font-bold transition-colors hover:bg-black hover:text-white",
-        "bg-" + backgroundColor,
-        "text-" + textColor
+        "bg-".concat(backgroundColor),
+        "text-".concat(textColor)
       )}
       onClick={onClick}
     >
