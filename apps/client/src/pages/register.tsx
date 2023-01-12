@@ -1,7 +1,7 @@
 import { MyPage } from "$core/@types";
 import { Register } from "$modules/layouts";
 
-const IndexPage: MyPage = () => {
+const RegisterPage: MyPage = () => {
   return (
     <main className="flex h-screen w-screen items-center justify-center bg-gray-light">
       <Register />
@@ -9,4 +9,4 @@ const IndexPage: MyPage = () => {
   );
 };
 
-export default IndexPage;
+export default RegisterPage;

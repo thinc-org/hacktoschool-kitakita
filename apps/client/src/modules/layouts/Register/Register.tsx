@@ -53,13 +53,6 @@ export const Register: FC = () => {
           >
             Confirm Password
           </InputText>
-          <InputRadio
-            handleChange={(e) => updateInput("role", e.target.value)}
-            name="role"
-            values={["student", "teacher"]}
-          >
-            Select a role
-          </InputRadio>
           <div className="ml-4 w-1/2 lg:mt-6">
             <Button
               backgroundColor="bg-cyan-light"

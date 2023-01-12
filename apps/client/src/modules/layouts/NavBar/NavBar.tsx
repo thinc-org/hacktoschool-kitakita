@@ -40,6 +40,9 @@ export const NavBar: FC = () => {
           <DesktopItem active={true} link="/">
             Home
           </DesktopItem>
+          <DesktopItem active={false} link="/dashboard">
+            Dashboard
+          </DesktopItem>
           <DesktopItem active={false} link="/textbook">
             Textbook
           </DesktopItem>
