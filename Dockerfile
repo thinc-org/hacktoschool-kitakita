@@ -1,9 +1,9 @@
-FROM node:18-alpine AS base
+FROM node:18-slim AS base
 
 WORKDIR /kitakita
 
-RUN apk add --no-cache libc6-compat
-RUN apk update
+RUN apt-get update
+RUN apt-get install -y openssl
 RUN npm install -g pnpm
 
 COPY package.json turbo.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc ./

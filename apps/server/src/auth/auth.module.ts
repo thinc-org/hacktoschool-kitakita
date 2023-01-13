@@ -6,7 +6,7 @@ import { ConfigService } from "src/config/config.service";
 
 import { AuthController } from "./auth.controller";
 import { AuthService } from "./auth.service";
-import { GoogleOAuthStrategy } from "./google-oauth.strategy";
+// import { GoogleOAuthStrategy } from "./google-oauth.strategy";
 import { JwtStrategy } from "./jwt.strategy";
 
 @Module({
@@ -25,7 +25,7 @@ import { JwtStrategy } from "./jwt.strategy";
     }),
     ConfigModule,
   ],
-  providers: [AuthService, JwtStrategy, GoogleOAuthStrategy],
+  providers: [AuthService, JwtStrategy /*, GoogleOAuthStrategy*/],
   controllers: [AuthController],
 })
 export class AuthModule {}

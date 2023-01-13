@@ -1,6 +1,5 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
-import { UserRole } from '../prisma/user-role.enum';
 import { StudentProfileCreateNestedOneWithoutUserInput } from '../student-profile/student-profile-create-nested-one-without-user.input';
 import { InstructorProfileCreateNestedOneWithoutUserInput } from '../instructor-profile/instructor-profile-create-nested-one-without-user.input';
 
@@ -13,8 +12,8 @@ export class UserCreateInput {
     @Field(() => String, {nullable:false})
     username!: string;
 
-    @Field(() => UserRole, {nullable:false})
-    role!: keyof typeof UserRole;
+    @Field(() => String, {nullable:false})
+    hashedPassword!: string;
 
     @Field(() => Boolean, {nullable:true})
     online?: boolean;

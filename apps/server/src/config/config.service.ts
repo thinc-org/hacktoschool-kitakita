@@ -22,4 +22,8 @@ export class ConfigService {
   get googleOAuth(): Configuration["googleOAuth"] {
     return this.configService.get("googleOAuth") || defaultConfig.googleOAuth;
   }
+
+  get bcrypt(): Configuration["bcrypt"] {
+    return this.configService.get("bcrypt") || defaultConfig.bcrypt;
+  }
 }

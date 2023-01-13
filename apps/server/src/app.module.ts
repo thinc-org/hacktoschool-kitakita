@@ -16,6 +16,7 @@ import { UserModule } from "./user/user.module";
     ConfigModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
+      cache: "bounded",
       autoSchemaFile: "./src/@generated/schema.graphql",
     }),
     UserModule,

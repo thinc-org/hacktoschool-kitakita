@@ -12,7 +12,7 @@ export class UserCountAggregate {
     username!: number;
 
     @Field(() => Int, {nullable:false})
-    role!: number;
+    hashedPassword!: number;
 
     @Field(() => Int, {nullable:false})
     online!: number;
