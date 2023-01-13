@@ -67,6 +67,7 @@ type User {
   id: ID!
   username: String!
   hashedPassword: String!
+  online: Boolean!
   StudentProfile: StudentProfile
   InstructorProfile: InstructorProfile
   createdAt: DateTime!
@@ -85,6 +86,7 @@ input UserWhereInput {
   id: StringFilter
   username: StringFilter
   hashedPassword: StringFilter
+  online: BoolFilter
   StudentProfile: StudentProfileRelationFilter
   InstructorProfile: InstructorProfileRelationFilter
   createdAt: DateTimeFilter
@@ -123,6 +125,16 @@ input NestedStringFilter {
   startsWith: String
   endsWith: String
   not: NestedStringFilter
+}
+
+input BoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
+}
+
+input NestedBoolFilter {
+  equals: Boolean
+  not: NestedBoolFilter
 }
 
 input StudentProfileRelationFilter {
@@ -263,6 +275,7 @@ input UserOrderByWithRelationInput {
   id: SortOrder
   username: SortOrder
   hashedPassword: SortOrder
+  online: SortOrder
   StudentProfile: StudentProfileOrderByWithRelationInput
   InstructorProfile: InstructorProfileOrderByWithRelationInput
   createdAt: SortOrder
@@ -303,6 +316,7 @@ enum UserScalarFieldEnum {
   id
   username
   hashedPassword
+  online
   createdAt
   updatedAt
 }

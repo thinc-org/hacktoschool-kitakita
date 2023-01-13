@@ -80,13 +80,6 @@ export type DateTimeFilter = {
   notIn?: InputMaybe<Array<Scalars['DateTime']>>;
 };
 
-export type EnumUserRoleFilter = {
-  equals?: InputMaybe<UserRole>;
-  in?: InputMaybe<Array<UserRole>>;
-  not?: InputMaybe<NestedEnumUserRoleFilter>;
-  notIn?: InputMaybe<Array<UserRole>>;
-};
-
 export type InstructorProfile = {
   __typename?: 'InstructorProfile';
   _count: InstructorProfileCount;
@@ -151,13 +144,6 @@ export type NestedDateTimeFilter = {
   lte?: InputMaybe<Scalars['DateTime']>;
   not?: InputMaybe<NestedDateTimeFilter>;
   notIn?: InputMaybe<Array<Scalars['DateTime']>>;
-};
-
-export type NestedEnumUserRoleFilter = {
-  equals?: InputMaybe<UserRole>;
-  in?: InputMaybe<Array<UserRole>>;
-  not?: InputMaybe<NestedEnumUserRoleFilter>;
-  notIn?: InputMaybe<Array<UserRole>>;
 };
 
 export type NestedIntFilter = {
@@ -276,9 +262,9 @@ export type User = {
   InstructorProfile?: Maybe<InstructorProfile>;
   StudentProfile?: Maybe<StudentProfile>;
   createdAt: Scalars['DateTime'];
+  hashedPassword: Scalars['String'];
   id: Scalars['ID'];
   online: Scalars['Boolean'];
-  role: UserRole;
   updatedAt: Scalars['DateTime'];
   username: Scalars['String'];
 };
@@ -287,9 +273,9 @@ export type UserOrderByWithRelationInput = {
   InstructorProfile?: InputMaybe<InstructorProfileOrderByWithRelationInput>;
   StudentProfile?: InputMaybe<StudentProfileOrderByWithRelationInput>;
   createdAt?: InputMaybe<SortOrder>;
+  hashedPassword?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   online?: InputMaybe<SortOrder>;
-  role?: InputMaybe<SortOrder>;
   updatedAt?: InputMaybe<SortOrder>;
   username?: InputMaybe<SortOrder>;
 };
@@ -299,17 +285,11 @@ export type UserRelationFilter = {
   isNot?: InputMaybe<UserWhereInput>;
 };
 
-export enum UserRole {
-  Admin = 'Admin',
-  Instructor = 'Instructor',
-  Student = 'Student'
-}
-
 export enum UserScalarFieldEnum {
   CreatedAt = 'createdAt',
+  HashedPassword = 'hashedPassword',
   Id = 'id',
   Online = 'online',
-  Role = 'role',
   UpdatedAt = 'updatedAt',
   Username = 'username'
 }
@@ -321,9 +301,9 @@ export type UserWhereInput = {
   OR?: InputMaybe<Array<UserWhereInput>>;
   StudentProfile?: InputMaybe<StudentProfileRelationFilter>;
   createdAt?: InputMaybe<DateTimeFilter>;
+  hashedPassword?: InputMaybe<StringFilter>;
   id?: InputMaybe<StringFilter>;
   online?: InputMaybe<BoolFilter>;
-  role?: InputMaybe<EnumUserRoleFilter>;
   updatedAt?: InputMaybe<DateTimeFilter>;
   username?: InputMaybe<StringFilter>;
 };

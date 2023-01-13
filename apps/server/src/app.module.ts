@@ -2,6 +2,8 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { Global, Module } from "@nestjs/common";
 import { GraphQLModule } from "@nestjs/graphql";
 
+import { ApolloServerPluginLandingPageLocalDefault } from "apollo-server-core";
+
 import { PrismaService } from "./prisma.service";
 
 import { AppController } from "./app.controller";
@@ -18,6 +20,8 @@ import { UserModule } from "./user/user.module";
       driver: ApolloDriver,
       cache: "bounded",
       autoSchemaFile: "./src/@generated/schema.graphql",
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault({ embed: true })],
     }),
     UserModule,
     AuthModule,
