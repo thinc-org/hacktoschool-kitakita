@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
   database:
-    container_name: kitakita-database
     image: postgres:13
     restart: unless-stopped
     volumes:
@@ -13,24 +12,6 @@ services:
       POSTGRES_DB: kitakita
     ports:
       - 5432:5432
-    networks:
-      - kitakita
-  apps:
-    container_name: kitakita-apps
-    restart: unless-stopped
-    build: .
-    ports:
-      - 80:4200
-      - 4201:4201
-    volumes:
-      - .env:/kitakita/.env
-    networks:
-      - kitakita
 
 volumes:
   database-storage:
-
-
-networks:
-  kitakita:
-    driver: bridge
