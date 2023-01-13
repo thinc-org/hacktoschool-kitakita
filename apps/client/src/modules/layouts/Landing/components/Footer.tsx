@@ -15,9 +15,9 @@ export const Footer: FC = () => {
         <FooterItem link="/stats">Statistics</FooterItem>
         <FooterItem link="/sprint">Sprint</FooterItem>
         <FooterItem link="/audio">Audio-call</FooterItem>
-        <FooterItem link="/">Kita</FooterItem>
+        <FooterItem link="/">Ikuyo</FooterItem>
         <FooterItem link="/">Hitori</FooterItem>
-        <FooterItem link="/">Nikita</FooterItem>
+        <FooterItem link="/">Nijika</FooterItem>
       </div>
       <div className="flex w-4/5 justify-between text-sm font-semibold text-gray-dark">
         <div className="flex hidden w-1/2 space-x-6 lg:block">
