@@ -42,7 +42,7 @@ export const Footer: FC = () => {
           <Image alt="cleverse" height={30} src={cleverse} width={30} />
           <Image
             alt="brikl"
-            className="bg-black"
+            className="bg-gray-dark"
             height={20}
             src={brikl}
             width={70}
