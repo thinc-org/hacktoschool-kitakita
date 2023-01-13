@@ -15,7 +15,7 @@ export class UserOrderByWithAggregationInput {
     username?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
-    role?: keyof typeof SortOrder;
+    hashedPassword?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
     online?: keyof typeof SortOrder;

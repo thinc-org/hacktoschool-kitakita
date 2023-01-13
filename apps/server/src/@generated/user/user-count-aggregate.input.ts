@@ -11,7 +11,7 @@ export class UserCountAggregateInput {
     username?: true;
 
     @Field(() => Boolean, {nullable:true})
-    role?: true;
+    hashedPassword?: true;
 
     @Field(() => Boolean, {nullable:true})
     online?: true;

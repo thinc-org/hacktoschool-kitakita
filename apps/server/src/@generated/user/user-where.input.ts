@@ -1,7 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
 import { StringFilter } from '../prisma/string-filter.input';
-import { EnumUserRoleFilter } from '../prisma/enum-user-role-filter.input';
 import { BoolFilter } from '../prisma/bool-filter.input';
 import { StudentProfileRelationFilter } from '../student-profile/student-profile-relation-filter.input';
 import { InstructorProfileRelationFilter } from '../instructor-profile/instructor-profile-relation-filter.input';
@@ -25,8 +24,8 @@ export class UserWhereInput {
     @Field(() => StringFilter, {nullable:true})
     username?: StringFilter;
 
-    @Field(() => EnumUserRoleFilter, {nullable:true})
-    role?: EnumUserRoleFilter;
+    @Field(() => StringFilter, {nullable:true})
+    hashedPassword?: StringFilter;
 
     @Field(() => BoolFilter, {nullable:true})
     online?: BoolFilter;

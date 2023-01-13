@@ -66,18 +66,11 @@ type StudentProfile {
 type User {
   id: ID!
   username: String!
-  role: UserRole!
-  online: Boolean!
+  hashedPassword: String!
   StudentProfile: StudentProfile
   InstructorProfile: InstructorProfile
   createdAt: DateTime!
   updatedAt: DateTime!
-}
-
-enum UserRole {
-  Student
-  Instructor
-  Admin
 }
 
 type Query {
@@ -91,8 +84,7 @@ input UserWhereInput {
   NOT: [UserWhereInput!]
   id: StringFilter
   username: StringFilter
-  role: EnumUserRoleFilter
-  online: BoolFilter
+  hashedPassword: StringFilter
   StudentProfile: StudentProfileRelationFilter
   InstructorProfile: InstructorProfileRelationFilter
   createdAt: DateTimeFilter
@@ -131,30 +123,6 @@ input NestedStringFilter {
   startsWith: String
   endsWith: String
   not: NestedStringFilter
-}
-
-input EnumUserRoleFilter {
-  equals: UserRole
-  in: [UserRole!]
-  notIn: [UserRole!]
-  not: NestedEnumUserRoleFilter
-}
-
-input NestedEnumUserRoleFilter {
-  equals: UserRole
-  in: [UserRole!]
-  notIn: [UserRole!]
-  not: NestedEnumUserRoleFilter
-}
-
-input BoolFilter {
-  equals: Boolean
-  not: NestedBoolFilter
-}
-
-input NestedBoolFilter {
-  equals: Boolean
-  not: NestedBoolFilter
 }
 
 input StudentProfileRelationFilter {
@@ -294,8 +262,7 @@ input CourseRelationFilter {
 input UserOrderByWithRelationInput {
   id: SortOrder
   username: SortOrder
-  role: SortOrder
-  online: SortOrder
+  hashedPassword: SortOrder
   StudentProfile: StudentProfileOrderByWithRelationInput
   InstructorProfile: InstructorProfileOrderByWithRelationInput
   createdAt: SortOrder
@@ -335,8 +302,7 @@ input UserWhereUniqueInput {
 enum UserScalarFieldEnum {
   id
   username
-  role
-  online
+  hashedPassword
   createdAt
   updatedAt
 }

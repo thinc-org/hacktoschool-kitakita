@@ -2,7 +2,6 @@ import { FC } from "react";
 
 import { Course } from "./components/Course";
 import { courses } from "./courses";
-
 type DashboardProps = {
   role: string;
 };
