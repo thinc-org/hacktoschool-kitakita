@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import Image from "next/image";
 
-import { gT, github, youtube } from "$core/resources";
+import { brikl, cleverse, gT, github, thinc, youtube } from "$core/resources";
 
 import { FooterItem } from "./FooterItem";
 
@@ -38,6 +38,9 @@ export const Footer: FC = () => {
           <Image alt="github" height={30} src={github} width={30} />
           <Image alt="gT" height={30} src={gT} width={30} />
           <Image alt="youtube" height={30} src={youtube} width={30} />
+          <Image alt="thinc" height={21} src={thinc} width={21} />
+          <Image alt="cleverse" height={30} src={cleverse} width={30} />
+          <Image alt="brikl" height={30} src={brikl} width={30} />
         </div>
         <h2 className="mb-10 text-center text-[10px] font-semibold text-gray-dark lg:text-xs">
           ©2021 GlobalTalk. Project for{" "}
