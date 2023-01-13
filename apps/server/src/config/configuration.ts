@@ -10,6 +10,9 @@ export type Configuration = {
     clientSecret: string;
     callbackURL: string;
   };
+  bcrypt: {
+    salt: number;
+  };
 };
 
 export const defaultConfig: Configuration = {
@@ -23,6 +26,9 @@ export const defaultConfig: Configuration = {
     clientID: "",
     clientSecret: "",
     callbackURL: "",
+  },
+  bcrypt: {
+    salt: 10,
   },
 };
 
@@ -43,5 +49,9 @@ export default (): Configuration => ({
     callbackURL:
       process.env.GOOGLE_OAUTH_CALLBACK_URL ||
       defaultConfig.googleOAuth.callbackURL,
+  },
+  bcrypt: {
+    salt:
+      parseInt(process.env.BCRYPT_SALT ?? "", 10) || defaultConfig.bcrypt.salt,
   },
 });

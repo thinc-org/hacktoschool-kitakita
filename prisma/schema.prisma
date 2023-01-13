@@ -22,10 +22,11 @@ enum UserRole {
 }
 
 model User {
-  id       String   @id @unique @default(cuid())
-  username String   @unique
-  role     UserRole
-  online   Boolean  @default(false)
+  id             String @id @unique @default(cuid())
+  username       String @unique
+  hashedPassword String
+  // role     UserRole
+  // online   Boolean  @default(false)
 
   StudentProfile    StudentProfile?
   InstructorProfile InstructorProfile?

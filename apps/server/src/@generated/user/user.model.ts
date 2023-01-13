@@ -1,7 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { ObjectType } from '@nestjs/graphql';
 import { ID } from '@nestjs/graphql';
-import { UserRole } from '../prisma/user-role.enum';
 import { StudentProfile } from '../student-profile/student-profile.model';
 import { InstructorProfile } from '../instructor-profile/instructor-profile.model';
 
@@ -14,11 +13,8 @@ export class User {
     @Field(() => String, {nullable:false})
     username!: string;
 
-    @Field(() => UserRole, {nullable:false})
-    role!: keyof typeof UserRole;
-
-    @Field(() => Boolean, {nullable:false,defaultValue:false})
-    online!: boolean;
+    @Field(() => String, {nullable:false})
+    hashedPassword!: string;
 
     @Field(() => StudentProfile, {nullable:true})
     StudentProfile?: StudentProfile | null;
