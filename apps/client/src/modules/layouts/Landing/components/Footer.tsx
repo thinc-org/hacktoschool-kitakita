@@ -39,14 +39,22 @@ export const Footer: FC = () => {
           <Image alt="gT" height={30} src={gT} width={30} />
           <Image alt="youtube" height={30} src={youtube} width={30} />
           <Image alt="thinc" height={21} src={thinc} width={21} />
-          <Image alt="cleverse" height={30} src={cleverse} width={30} />
-          <Image
-            alt="brikl"
-            className="bg-gray-dark"
-            height={20}
-            src={brikl}
-            width={70}
-          />
+          <a
+            href="https://careers.cleverse.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Image alt="cleverse" height={30} src={cleverse} width={30} />
+          </a>
+          <a href="https://www.brikl.com/jobs" rel="noreferrer" target="_blank">
+            <Image
+              alt="brikl"
+              className="bg-gray-dark"
+              height={20}
+              src={brikl}
+              width={70}
+            />
+          </a>
         </div>
         <h2 className="mb-10 text-center text-[10px] font-semibold text-gray-dark lg:text-xs">
           ©2021 GlobalTalk. Project for{" "}
