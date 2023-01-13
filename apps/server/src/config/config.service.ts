@@ -18,4 +18,8 @@ export class ConfigService {
   get host(): Configuration["host"] {
     return this.configService.get("host") || defaultConfig.host;
   }
+
+  get googleOAuth(): Configuration["googleOAuth"] {
+    return this.configService.get("googleOAuth") || defaultConfig.googleOAuth;
+  }
 }

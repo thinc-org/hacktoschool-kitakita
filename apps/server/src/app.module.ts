@@ -1,6 +1,6 @@
+import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 import { Global, Module } from "@nestjs/common";
 import { GraphQLModule } from "@nestjs/graphql";
-import { MercuriusDriver, MercuriusDriverConfig } from "@nestjs/mercurius";
 
 import { PrismaService } from "./prisma.service";
 
@@ -14,8 +14,8 @@ import { UserModule } from "./user/user.module";
 @Module({
   imports: [
     ConfigModule,
-    GraphQLModule.forRoot<MercuriusDriverConfig>({
-      driver: MercuriusDriver,
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
       autoSchemaFile: "./src/@generated/schema.graphql",
     }),
     UserModule,
