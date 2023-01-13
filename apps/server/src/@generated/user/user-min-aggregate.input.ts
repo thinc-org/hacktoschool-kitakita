@@ -14,6 +14,9 @@ export class UserMinAggregateInput {
     hashedPassword?: true;
 
     @Field(() => Boolean, {nullable:true})
+    online?: true;
+
+    @Field(() => Boolean, {nullable:true})
     createdAt?: true;
 
     @Field(() => Boolean, {nullable:true})

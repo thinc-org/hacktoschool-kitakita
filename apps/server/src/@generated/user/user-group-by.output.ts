@@ -16,6 +16,9 @@ export class UserGroupBy {
     @Field(() => String, {nullable:false})
     hashedPassword!: string;
 
+    @Field(() => Boolean, {nullable:false})
+    online!: boolean;
+
     @Field(() => Date, {nullable:false})
     createdAt!: Date | string;
 

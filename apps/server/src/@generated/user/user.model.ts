@@ -16,6 +16,9 @@ export class User {
     @Field(() => String, {nullable:false})
     hashedPassword!: string;
 
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    online!: boolean;
+
     @Field(() => StudentProfile, {nullable:true})
     StudentProfile?: StudentProfile | null;
 

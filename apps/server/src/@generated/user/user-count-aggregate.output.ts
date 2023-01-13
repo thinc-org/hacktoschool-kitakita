@@ -15,6 +15,9 @@ export class UserCountAggregate {
     hashedPassword!: number;
 
     @Field(() => Int, {nullable:false})
+    online!: number;
+
+    @Field(() => Int, {nullable:false})
     createdAt!: number;
 
     @Field(() => Int, {nullable:false})

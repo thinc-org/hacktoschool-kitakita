@@ -15,6 +15,9 @@ export class UserMaxOrderByAggregateInput {
     hashedPassword?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})
+    online?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
     createdAt?: keyof typeof SortOrder;
 
     @Field(() => SortOrder, {nullable:true})

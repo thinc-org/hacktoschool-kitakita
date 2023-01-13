@@ -14,6 +14,9 @@ export class UserUncheckedCreateWithoutInstructorProfileInput {
     @Field(() => String, {nullable:false})
     hashedPassword!: string;
 
+    @Field(() => Boolean, {nullable:true})
+    online?: boolean;
+
     @Field(() => StudentProfileUncheckedCreateNestedOneWithoutUserInput, {nullable:true})
     StudentProfile?: StudentProfileUncheckedCreateNestedOneWithoutUserInput;
 

@@ -16,6 +16,9 @@ export class UserOrderByWithRelationInput {
     @Field(() => SortOrder, {nullable:true})
     hashedPassword?: keyof typeof SortOrder;
 
+    @Field(() => SortOrder, {nullable:true})
+    online?: keyof typeof SortOrder;
+
     @Field(() => StudentProfileOrderByWithRelationInput, {nullable:true})
     StudentProfile?: StudentProfileOrderByWithRelationInput;
 

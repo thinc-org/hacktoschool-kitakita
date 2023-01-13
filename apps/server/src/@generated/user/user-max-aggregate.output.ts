@@ -13,6 +13,9 @@ export class UserMaxAggregate {
     @Field(() => String, {nullable:true})
     hashedPassword?: string;
 
+    @Field(() => Boolean, {nullable:true})
+    online?: boolean;
+
     @Field(() => Date, {nullable:true})
     createdAt?: Date | string;
 

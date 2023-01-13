@@ -13,6 +13,9 @@ export class UserCreateManyInput {
     @Field(() => String, {nullable:false})
     hashedPassword!: string;
 
+    @Field(() => Boolean, {nullable:true})
+    online?: boolean;
+
     @Field(() => Date, {nullable:true})
     createdAt?: Date | string;
 
