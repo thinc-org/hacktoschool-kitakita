@@ -27,9 +27,9 @@ export const SectionThree: FC = () => {
       <Image
         alt="girlipad"
         className="mt-8 md:hidden"
-        height={400}
+        height={370}
         src={girlBook}
-        width={400}
+        width={370}
       />
       <Image
         alt="girlipad"

@@ -13,3 +13,6 @@ export { default as youtube } from "./youtube.svg";
 export { default as github } from "./github.svg";
 export { default as ajarnDaeng } from "./ajarnDaeng.gif";
 export { default as bocchi } from "./bocchi.gif";
+export { default as brikl } from "./brikl.png";
+export { default as cleverse } from "./cleverse.png";
+export { default as thinc } from "./thinc.svg";
